@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 /* import axios from 'axios'; */
 
 export const authSlice = createSlice({
-  name: 'comics',
+  name: 'character',
   initialState: {
-    comics: [],
+    character: [],
   },
   reducers: {
     setCharacter: (state, action) => {
-      state.comics = [...action.payload]; 
+      state.character = [...action.payload]; 
     },
   },
 });
