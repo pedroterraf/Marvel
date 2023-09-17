@@ -1,0 +1,59 @@
+.detail-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2em;
+    .card-detail-all{
+        width: 20em;
+        height: 100%;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, .7);
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1); 
+            transition: all 0.6s;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.145);
+        }
+        .card-detail-image{
+            width: 20em;
+            height: 20em;
+            object-fit: cover;
+            object-position: center;
+        }
+        .card-detail-desc{
+            width: 100%;
+            padding: .5em;
+            .card-desc-name{
+                font-size: 1.8em;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .card-desc-desc{
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: .8em;
+                font-weight: bold;
+                text-align: start;
+            }
+            .card-desc-id{
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 1em;
+                font-weight: bold;
+                text-align: end;
+                color: red;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .card-detail-buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                .card-button{
+                    display: flex;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

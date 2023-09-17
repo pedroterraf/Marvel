@@ -2,25 +2,21 @@ import './SearchBar.scss'
 import { Form, InputGroup } from 'react-bootstrap';
 import {  useEffect, useState } from "react";
 
-function SearchBar() {
+function SearchBar({character, setResult}) {
     
     const [searchQuery, setSearchQuery] = useState("")
-    
-    useEffect(() => {
-        if (searchQuery === "") {
-            //findProductStorage("");
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery]);
     
     const handleChange = (event) => {
         const inputValue = event.target.value.slice(0, 30);
         setSearchQuery(inputValue);
-        //findProductStorage(inputValue);
-
-        //resetPagination();
+        const filtered = character.filter((a) => a?.name.includes(inputValue) );
+        setResult(filtered);
     };
 
+    useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchQuery]);
+    
   return (
     <div>
         <InputGroup className="search_container m-5">
