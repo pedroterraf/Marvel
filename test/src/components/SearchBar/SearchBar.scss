@@ -1,0 +1,28 @@
+.search_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 30em;
+    border-radius: 6px;
+    
+    .formControl{
+      display: flex;
+      text-align: center;
+      border: 2px solid red;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .search_container {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      margin: auto;
+      width: 20em;
+      .search_item {
+        font-size: 12px;
+      }
+    }
+  } 
+  

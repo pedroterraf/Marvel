@@ -1,0 +1,18 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    .NavbarIcon {
+        width: 2em;
+        height: 2em;
+        cursor: pointer;
+        color: black;
+        &:hover {
+          transform: scale(1.2); 
+          transition: all 0.3s;
+        }
+      }
+      
+}
