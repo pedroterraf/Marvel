@@ -102,64 +102,6 @@
       align-items: center;
       flex-direction: row;
       flex-wrap: wrap;
-      .our_character{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 18.75em;
-        height: 18.75em;
-        margin: 1em;
-        border-radius: 6px;
-        box-shadow: 0 8px 12px rgba(0, 0, 0, .7);
-        .our_character_image{
-          width: 300px;
-          height: 300px;
-          object-fit: cover;
-          object-position: center;
-          border-radius: 6px;
-        }
-        .background_container {
-          opacity: 0;
-          z-index: 999;
-          width: 18.75em;
-          height: 18.75em;
-          position: absolute;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          background-color: rgba(0, 0, 0, 0.505);
-          margin: 1em;
-          transition: opacity 0.3s ease-in-out;
-          border-radius: 6px; 
-          &:hover {
-            opacity: 1;
-            border-radius: 6px;
-          }
-          .background_name{
-            text-align: center;
-            color: white;
-            width: 90%;
-            font-size: 1.5em;
-            white-space: nowrap; 
-            overflow: hidden; 
-            text-overflow: ellipsis;
-          }
-          .background_button {
-            text-decoration: none;
-            color: white;
-            border: 1px solid white;
-            padding: 8px;
-            cursor: pointer;
-            transition: background 0.5s ease;
-            .background_button:hover {
-              background-color: white;
-              color: black;
-            }
-          }
-        }
-      }
     }
   }
 }

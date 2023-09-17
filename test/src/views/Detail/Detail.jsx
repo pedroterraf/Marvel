@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Detail.scss'
+import './Detail.scss';
 import axios from 'axios';
 import { NavLink, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
