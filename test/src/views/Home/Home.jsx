@@ -14,15 +14,15 @@ const Home = () => {
   const fetchDataCharacters = async () => {
     const apiKey = 'd21bb365ba4ff40132f24c4ad59a1f3c';
     const hash = 'f05d123508f64e411f3846f09b44fe07';
-    const URL = 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=';
-  
+    const URL = 'https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=';
+    //https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=d21bb365ba4ff40132f24c4ad59a1f3c&hash=f05d123508f64e411f3846f09b44fe07
     try {
       const response = await axios.get(`${URL}${apiKey}&hash=${hash}`);
   
       const characters = response.data.data.results?.map((e) => {
         return {
           id: e?.id,
-          name: e?.name,
+          name: e?.title,
           image: `${e?.thumbnail.path}.${e?.thumbnail.extension}`,
         };
       });
@@ -40,7 +40,7 @@ const Home = () => {
   }, []);
       
     //paginado 
-    const countriesPerPage = 4;
+    const countriesPerPage = 6;
   
     const lastIndex = currentPage * countriesPerPage;
     const firstIndex = lastIndex - countriesPerPage;
@@ -81,8 +81,8 @@ const Home = () => {
               </button>
             </div>
             <span className="text">{`${currentPage} / ${total}`}</span>
-            </div>
           </div>
+        </div>
         <div className="BoxContainer">
           {character?.length > 0 ? (
             <div className="Box">
@@ -97,8 +97,8 @@ const Home = () => {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           )}
-          </div>
         </div>
+      </div>
     )
 }
 

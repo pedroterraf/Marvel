@@ -7,7 +7,8 @@ function SearchBar({character, setResult}) {
     const [searchQuery, setSearchQuery] = useState("")
     
     const handleChange = (event) => {
-        const inputValue = event.target.value.slice(0, 30);
+        const inputValue = event.target.value.slice(0, 15
+            );
         setSearchQuery(inputValue);
         const filtered = character.filter((a) => a?.name.includes(inputValue) );
         setResult(filtered);

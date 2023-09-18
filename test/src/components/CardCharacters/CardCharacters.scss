@@ -3,32 +3,44 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 18.75em;
-    height: 18.75em;
     margin: 1em;
     border-radius: 6px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, .7);
+    &:hover{
+      transform: scale(1.1); 
+      transition: all 0.6s;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
     .our_character_image{
-      width: 300px;
-      height: 300px;
+      width: 25em;
+      height: 25em;
       object-fit: cover;
       object-position: center;
       border-radius: 6px;
+
+      @media screen and (max-width: 768px) {
+        width: 20em;
+        height: 20em;
+      }
     }
     .background_container {
       opacity: 0;
       z-index: 999;
-      width: 18.75em;
-      height: 18.75em;
+      width: 25em;
+      height: 25em;
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       background-color: rgba(0, 0, 0, 0.505);
-      margin: 1em;
       transition: opacity 0.3s ease-in-out;
       border-radius: 6px; 
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+      }
       &:hover {
         opacity: 1;
         border-radius: 6px;

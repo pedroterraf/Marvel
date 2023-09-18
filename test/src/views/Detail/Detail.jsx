@@ -17,20 +17,24 @@ const Detail = () => {
   const fetchDataDetail = async (id) => {
     const apiKey = 'd21bb365ba4ff40132f24c4ad59a1f3c';
     const hash = 'f05d123508f64e411f3846f09b44fe07';
-    const URL = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=`;
+    const URL = `https://gateway.marvel.com:443/v1/public/comics/${id}?ts=1&apikey=`;
     try {
       const response = await axios.get(`${URL}${apiKey}&hash=${hash}`);
   
-      const characters = response.data.data.results?.map((e) => {
+      const comics = response.data.data.results?.map((e) => {
+        const characterNames = e.characters.items.map((character) => character.name);
         return {
+          key: e?.id,
           id: e?.id,
-          name: e?.name,
+          title: e?.title,
           description: e?.description,
+          characters: e?.characters.available,
+          characterNames: characterNames.join(', '),
           image: `${e?.thumbnail.path}.${e?.thumbnail.extension}`,
         };
       });
-  
-      setDetail(characters);
+
+      setDetail(comics);
     } catch (error) {
       console.error("Error fetching data:", error);
       setDetail([detail]);
@@ -47,7 +51,10 @@ const Detail = () => {
       {detail.map((a) => {
         return(
           <div className='detail-all'>
-            <Card sx={{ maxWidth: 500 }} className='card-detail-all'>
+            <Card sx={{ maxWidth: 500 }} className='card-detail-all' key={a?.id}>
+              <Typography variant="body2" color="text.secondary" className='card-id'>
+                  {a?.id}
+              </Typography>
               <CardMedia
                 className='card-detail-image'
                 sx={{ height: 250 }}
@@ -57,13 +64,16 @@ const Detail = () => {
               />
               <CardContent className='card-detail-desc'>
                 <Typography gutterBottom variant="h5" component="div" className='card-desc-name'>
-                  {a?.name}
+                  {a?.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" className='card-desc-desc'>
                   {a?.description}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" className='card-desc-id'>
-                  {a?.id}
+                <Typography variant="body2" color="text.secondary" className='card-desc-count'>
+                  {a?.characters === 0 ? ('No se encontraron personajes') : (a?.characters === 1 ? (`${a?.characters} Personaje`) : (`${a?.characters} Personajes`))}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" className='card-desc-characters'>
+                  {a?.characterNames}
                 </Typography>
                 <CardActions className='card-detail-buttons'>
                   <NavLink to={`/home`} style={{ textDecoration: 'none' }}>
