@@ -5,12 +5,13 @@
     width: 100%;
     margin-top: 5.5em;
     .card-detail-all{
-        width: 20em;
+        width: 60em;
         height: 100%;
         box-shadow: 0 8px 12px rgba(0, 0, 0, .7);
         cursor: pointer;
         @media screen and (max-width: 768px){
             margin-bottom: 15em;
+            width: 15em;
         }
         &:hover{
             transform: scale(1.1); 
@@ -29,10 +30,14 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .card-detail-image{
-            width: 20em;
+            width: 32em;
             height: 20em;
             object-fit: cover;
             object-position: center;
+            @media screen and (max-width: 768px){
+                width: 15em;
+                height: 15em;
+            }
         }
         .card-detail-desc{
             width: 100%;
@@ -48,12 +53,18 @@
                 color: white;
                 text-shadow: 2px 2px 4px rgba(65, 65, 65, 0.5);
                 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                @media screen and (max-width: 768px){
+                    font-size: .5em;
+                }
             }
             .card-desc-desc{
                 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 font-size: .7em;
                 font-weight: bold;
                 text-align: start;
+                @media screen and (max-width: 768px){
+                    font-size: .5em;
+                }
             }
             .card-desc-count{
                 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -63,6 +74,9 @@
                 text-align: center;
                 margin-top: .5em;
                 background-color: rgb(76, 76, 76);
+                @media screen and (max-width: 768px){
+                    font-size: .5em;
+                }
             }
             .card-desc-characters{
                 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -70,6 +84,9 @@
                 font-weight: bold;
                 text-align: start;
                 color: black;
+                @media screen and (max-width: 768px){
+                    font-size: .5em;
+                }
             }
             .card-detail-buttons{
                 display: flex;

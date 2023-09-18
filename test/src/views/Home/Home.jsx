@@ -19,7 +19,7 @@ const Home = () => {
     try {
       const response = await axios.get(`${URL}${apiKey}&hash=${hash}`);
   
-      const characters = response.data.data.results?.map((e) => {
+      const comics = response.data.data.results?.map((e) => {
         return {
           id: e?.id,
           name: e?.title,
@@ -27,8 +27,8 @@ const Home = () => {
         };
       });
   
-      setResult(characters)
-      setCharacter(characters);
+      setResult(comics)
+      setCharacter(comics);
     } catch (error) {
       console.error("Error fetching data:", error);
       setCharacter([]);
@@ -44,7 +44,7 @@ const Home = () => {
   
     const lastIndex = currentPage * countriesPerPage;
     const firstIndex = lastIndex - countriesPerPage;
-    const currentCharacters = result.slice(firstIndex, lastIndex);
+    const currentComics = result.slice(firstIndex, lastIndex);
   
     const total = Math.ceil(result.length / countriesPerPage);
   
@@ -94,7 +94,7 @@ const Home = () => {
         <div className="BoxContainer">
           {character?.length > 0 ? (
             <div className="Box">
-              {currentCharacters.map((a) => {
+              {currentComics.map((a) => {
                 return (
                   <CardCharacters a={a} />
                 )

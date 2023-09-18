@@ -23,11 +23,13 @@ const Detail = () => {
   
       const comics = response.data.data.results?.map((e) => {
         const characterNames = e.characters.items.map((character) => character.name);
+        const creators = e.creators.items.map((creator) => creator.name);
         return {
           key: e?.id,
           id: e?.id,
           title: e?.title,
           description: e?.description,
+          creators: creators.join(', '),
           characters: e?.characters.available,
           characterNames: characterNames.join(', '),
           image: `${e?.thumbnail.path}.${e?.thumbnail.extension}`,
@@ -67,8 +69,13 @@ const Detail = () => {
                   {a?.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" className='card-desc-desc'>
+                  {a?.creators.length === 0 ? ('No creators found') : (a?.creators.length === 1 ? (`Creator: ${a?.creators}`) : (`Creators: ${a?.creators}`))}
+                </Typography>
+                <hr />
+                <Typography variant="body2" color="text.secondary" className='card-desc-desc'>
                   {a?.description}
                 </Typography>
+                <hr />
                 <Typography variant="body2" color="text.secondary" className='card-desc-count'>
                   {a?.characters === 0 ? ('No characters found') : (a?.characters === 1 ? (`${a?.characters} Character`) : (`${a?.characters} Characters`))}
                 </Typography>
