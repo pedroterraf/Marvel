@@ -17,7 +17,6 @@
       object-fit: cover;
       object-position: center;
       border-radius: 6px;
-
       @media screen and (max-width: 768px) {
         width: 20em;
         height: 20em;
@@ -36,14 +35,14 @@
       background-color: rgba(0, 0, 0, 0.505);
       transition: opacity 0.3s ease-in-out;
       border-radius: 6px; 
-      @media screen and (max-width: 768px) {
-        flex-direction: column;
-        margin: auto;
-        width: 100%;
-      }
       &:hover {
         opacity: 1;
         border-radius: 6px;
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 20em;
+        height: 20em;
       }
       .background_name{
         text-align: center;

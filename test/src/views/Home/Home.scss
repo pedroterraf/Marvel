@@ -25,6 +25,7 @@
     cursor: default;
     @media screen and (max-width: 768px) {
       flex-direction: column;
+      margin-bottom: 1em;
     }
     .titleText{
       flex-direction: column;
@@ -120,6 +121,7 @@
       @media screen and (max-width: 768px) {
         flex-direction: column;
         margin: auto;
+        margin-bottom: 15em;
       }
     }
   }
