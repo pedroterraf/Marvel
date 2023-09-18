@@ -70,7 +70,7 @@ const Detail = () => {
                   {a?.description}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" className='card-desc-count'>
-                  {a?.characters === 0 ? ('No se encontraron personajes') : (a?.characters === 1 ? (`${a?.characters} Personaje`) : (`${a?.characters} Personajes`))}
+                  {a?.characters === 0 ? ('No characters found') : (a?.characters === 1 ? (`${a?.characters} Character`) : (`${a?.characters} Characters`))}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" className='card-desc-characters'>
                   {a?.characterNames}

@@ -25,8 +25,7 @@ function SearchBar({character, setResult}) {
                 maxLength={30}
                 onChange={handleChange}
                 value={searchQuery}
-                placeholder="¿Qué estás buscando?"
-                aria-label="¿Qué estás buscando?"
+                placeholder="Search comics..."
                 aria-describedby="basic-addon2"
                 className="formControl"
             />

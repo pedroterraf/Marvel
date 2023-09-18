@@ -52,6 +52,10 @@ const Home = () => {
       if (currentPage < total) {
         const nextPage = currentPage + 1;
         setCurrentPage(nextPage);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       }
     };
   
@@ -59,6 +63,10 @@ const Home = () => {
       if (currentPage > 1) {
         const prevPage = currentPage - 1;
         setCurrentPage(prevPage);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", 
+        });
       }
     };
 
