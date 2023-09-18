@@ -68,7 +68,7 @@ const Detail = () => {
                 <Typography gutterBottom variant="h5" component="div" className='card-desc-name'>
                   {a?.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" className='card-desc-desc'>
+                <Typography variant="body2" color="text.secondary" className='card-desc-characters'>
                   {a?.creators.length === 0 ? ('No creators found') : (a?.creators.length === 1 ? (`Creator: ${a?.creators}`) : (`Creators: ${a?.creators}`))}
                 </Typography>
                 <hr />
